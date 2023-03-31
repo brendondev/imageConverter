@@ -81,6 +81,11 @@ button:disabled {
   justify-content: center;
 }
 
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
 footer {
   position: absolute;
   bottom: 0;
