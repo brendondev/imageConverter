@@ -1,6 +1,18 @@
+.dark-mode {
+  --primary-color: #a16875;
+  --secondary-color: #bf98a0;
+  --background-color: #f8f8f8;
+  --text-color: #333;
+  --button-background-color: var(--primary-color);
+  --button-text-color: #fff;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.5s ease, color 0.5s ease;
+  overflow: hidden;
 }
 
 h1 {
@@ -35,14 +47,19 @@ button {
   margin-right: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #009688;
-  color: #fff;
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
-  background-color: #00796b;
+  background-color: var(--secondary-color);
+}
+
+label,
+input {
+  color: #333;
 }
 
 button:disabled {
@@ -53,4 +70,22 @@ button:disabled {
 .output {
   display: flex;
   justify-content: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; /* altura do rodapé */
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+:root {
+  --primary-color: #bf98a0;
+  --secondary-color: #a16875;
+  --background-color: #321f24;
+  --text-color: #f5f5f5;
+  --button-background-color: var(--primary-color);
+  --button-text-color: #f5f5f5;
 }

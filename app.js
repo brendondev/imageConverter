@@ -2,6 +2,8 @@ const fileInput = document.getElementById('file-input');
 const convertJpgButton = document.getElementById('convert-jpg');
 const convertPngButton = document.getElementById('convert-png');
 const downloadButton = document.getElementById('download');
+const toggleThemeButton = document.getElementById('theme-toggle');
+const body = document.querySelector('body');
 
 let img = null;
 let convertedImg = null;
@@ -40,12 +42,7 @@ convertJpgButton.addEventListener('click', () => {
   convertedImg.src = dataURL;
   convertedType = 'jpeg';
 
-  // Adiciona um aviso de conversão bem sucedida
-  const message = document.createElement('div');
-  message.innerText = 'A imagem foi convertida para JPEG.';
-  message.style.color = 'green';
-  message.style.marginTop = '10px';
-  downloadButton.parentNode.insertBefore(message, downloadButton);
+  showMessage();
 });
 
 convertPngButton.addEventListener('click', () => {
@@ -65,12 +62,7 @@ convertPngButton.addEventListener('click', () => {
   convertedImg.src = dataURL;
   convertedType = 'png';
 
-  // Adiciona um aviso de conversão bem sucedida
-  const message = document.createElement('div');
-  message.innerText = 'A imagem foi convertida para PNG.';
-  message.style.color = 'green';
-  message.style.marginTop = '10px';
-  downloadButton.parentNode.insertBefore(message, downloadButton);
+  showMessage();
 });
 
 downloadButton.addEventListener('click', () => {
@@ -86,3 +78,13 @@ downloadButton.addEventListener('click', () => {
   a.click();
   document.body.removeChild(a);
 });
+
+toggleThemeButton.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+});
+
+function showMessage() {
+  const messageContainer = document.getElementById('message-container');
+  const message = `Imagem convertida para ${convertedType.toUpperCase()}!`;
+  messageContainer.textContent = message;
+}
