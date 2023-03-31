@@ -118,6 +118,12 @@ footer {
   margin-bottom: 0.5em;
 }
 
+footer a {
+  color: var(--text-color);
+  text-decoration: double;
+  text-decoration-style: solid;
+}
+
 :root {
   --primary-color: #bf98a0;
   --secondary-color: #a16875;
