@@ -76,7 +76,7 @@ downloadButton.addEventListener('click', () => {
 
   const a = document.createElement('a');
   document.body.appendChild(a);
-  a.download = `image.${convertedType}`;
+  a.download = 'bconverter.' + convertedType;
   a.href = convertedImg.src;
   a.click();
   document.body.removeChild(a);
