@@ -26,7 +26,7 @@ h1 {
   align-items: center;
   margin: 50px auto;
   width: 80%;
-  max-width: 600px;
+  max-width: 1000px;
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
@@ -97,8 +97,11 @@ hr {
 
 .output-legend {
   display: flex;
-  gap: 10em;
   color: #321f24;
+  width: 100%;
+  position: absolute;
+  justify-content: space-around;
+  top: 76%;
 }
 
 .buttons {
