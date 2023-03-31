@@ -39,6 +39,13 @@ convertJpgButton.addEventListener('click', () => {
   convertedImg = new Image();
   convertedImg.src = dataURL;
   convertedType = 'jpeg';
+
+  // Adiciona um aviso de conversão bem sucedida
+  const message = document.createElement('div');
+  message.innerText = 'A imagem foi convertida para JPEG.';
+  message.style.color = 'green';
+  message.style.marginTop = '10px';
+  downloadButton.parentNode.insertBefore(message, downloadButton);
 });
 
 convertPngButton.addEventListener('click', () => {
@@ -57,6 +64,13 @@ convertPngButton.addEventListener('click', () => {
   convertedImg = new Image();
   convertedImg.src = dataURL;
   convertedType = 'png';
+
+  // Adiciona um aviso de conversão bem sucedida
+  const message = document.createElement('div');
+  message.innerText = 'A imagem foi convertida para PNG.';
+  message.style.color = 'green';
+  message.style.marginTop = '10px';
+  downloadButton.parentNode.insertBefore(message, downloadButton);
 });
 
 downloadButton.addEventListener('click', () => {
