@@ -96,3 +96,11 @@ function showMessage() {
   const message = `Image converted to ${convertedType.toUpperCase()}!`;
   messageContainer.textContent = message;
 }
+
+const navbarToggle = document.querySelector('.navbar-toggle');
+const navbarLinks = document.querySelector('.navbar-links');
+
+navbarToggle.addEventListener('click', () => {
+  navbarToggle.classList.toggle('active');
+  navbarLinks.classList.toggle('active');
+});
