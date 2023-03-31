@@ -2,6 +2,9 @@
 
 This is a project that allows the user to select an image in JPEG or PNG format, convert it to the other format and download it to his computer. The project was created using HTML, CSS and JavaScript, and does not require any external libraries.
 
+![image](https://user-images.githubusercontent.com/47898677/229156395-49e5850f-6fe4-4471-8ca9-794378157fb8.png)
+
+
 <h1>🚀 How to use</h1>
 
 To use this image converter, just clone the repository and open the index.html file in your browser. Then follow the instructions on the page to select an image and convert it to your desired format.
