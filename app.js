@@ -5,7 +5,6 @@ const downloadButton = document.getElementById('download');
 const toggleThemeButton = document.getElementById('theme-toggle');
 const outputContainer = document.getElementById('output-container');
 const body = document.querySelector('body');
-const messageContainer = document.getElementById('message-container');
 
 let img = null;
 let convertedImg = null;
@@ -21,6 +20,7 @@ fileInput.addEventListener('change', () => {
     img.onload = () => {
       convertJpgButton.disabled = false;
       convertPngButton.disabled = false;
+      displayImage();
     }
   }
 
@@ -45,7 +45,7 @@ convertJpgButton.addEventListener('click', () => {
   convertedType = 'jpeg';
 
   showImage();
-  showMessage(`Image converted to ${convertedType.toUpperCase()}!`);
+  showMessage('Image converted to JPEG!');
 });
 
 convertPngButton.addEventListener('click', () => {
@@ -66,7 +66,7 @@ convertPngButton.addEventListener('click', () => {
   convertedType = 'png';
 
   showImage();
-  showMessage(`Image converted to ${convertedType.toUpperCase()}!`);
+  showMessage('Image converted to PNG!');
 });
 
 downloadButton.addEventListener('click', () => {
@@ -81,7 +81,8 @@ downloadButton.addEventListener('click', () => {
   a.href = convertedImg.src;
   a.click();
   document.body.removeChild(a);
-  showMessage(`Image downloaded as ${convertedType.toUpperCase()}!`);
+
+  showMessage('Image downloaded!');
 });
 
 toggleThemeButton.addEventListener('click', () => {
@@ -94,5 +95,26 @@ function showImage() {
 }
 
 function showMessage(message) {
+  const messageContainer = document.getElementById('message-container');
   messageContainer.textContent = message;
+  messageContainer.classList.add('show');
+  setTimeout(() => {
+    messageContainer.classList.remove('show');
+  }, 3000);
 }
+
+function displayImage() {
+  const imageContainer = document.getElementById('image-container');
+  const image = document.createElement('img');
+  image.src = img.src;
+  imageContainer.innerHTML = '';
+  imageContainer.appendChild(image);
+}
+
+const navbarToggle = document.querySelector('.navbar-toggle');
+const navbarLinks = document.querySelector('.navbar-links');
+
+navbarToggle.addEventListener('click', () => {
+  navbarToggle.classList.toggle('active');
+  navbarLinks.classList.toggle('active');
+});

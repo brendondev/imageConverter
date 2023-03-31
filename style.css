@@ -89,6 +89,18 @@ button:disabled {
   justify-content: center;
 }
 
+hr {
+  width: 10px;
+  color: transparent;
+  border: 1px solid transparent;
+}
+
+.output-legend {
+  display: flex;
+  gap: 10em;
+  color: #321f24;
+}
+
 .buttons {
   display: flex;
   justify-content: center;
