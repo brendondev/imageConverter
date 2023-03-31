@@ -2,7 +2,7 @@
 
 This is a project that allows the user to select an image in JPEG or PNG format, convert it to the other format and download it to his computer. The project was created using HTML, CSS and JavaScript, and does not require any external libraries.
 
-![image](https://user-images.githubusercontent.com/47898677/229157344-5f9032f4-c1cb-4bb2-b1a0-2084b71a3d63.png)
+![image](https://user-images.githubusercontent.com/47898677/229158575-80242c73-b381-4c7a-8671-6f959194cdbb.png)
 
 <h1>🚀 How to use</h1>
 
