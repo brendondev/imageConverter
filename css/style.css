@@ -217,4 +217,28 @@ footer a {
   .navbar-toggle.active span:nth-of-type(3) {
     transform: translateY(-6px) rotate(-45deg);
   }
+
+  .output {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    align-items: center;
+  }
+
+  .output img {
+    height: 25vh;
+  }
+
+  #message-container {
+    margin-bottom: 3em;
+  }
+
+  .output-legend {
+    display: none;
+  }
+
+  footer {
+    width: 100%;
+    text-align: center;
+  }
 }
