@@ -33,6 +33,15 @@ h1 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+#see-converted {
+  color: #333;
+}
+
+.output img {
+  width: 100%;
+  height: 50vh;
+}
+
 .input {
   margin-bottom: 20px;
 }

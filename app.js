@@ -3,6 +3,7 @@ const convertJpgButton = document.getElementById('convert-jpg');
 const convertPngButton = document.getElementById('convert-png');
 const downloadButton = document.getElementById('download');
 const toggleThemeButton = document.getElementById('theme-toggle');
+const outputContainer = document.getElementById('output-container');
 const body = document.querySelector('body');
 
 let img = null;
@@ -27,7 +28,7 @@ fileInput.addEventListener('change', () => {
 
 convertJpgButton.addEventListener('click', () => {
   if (!img) {
-    alert('Por favor, selecione um arquivo.');
+    alert('Please select an image file.');
     return;
   }
 
@@ -42,12 +43,13 @@ convertJpgButton.addEventListener('click', () => {
   convertedImg.src = dataURL;
   convertedType = 'jpeg';
 
+  showImage();
   showMessage();
 });
 
 convertPngButton.addEventListener('click', () => {
   if (!img) {
-    alert('Por favor, selecione um arquivo.');
+    alert('Please select an image file.');
     return;
   }
 
@@ -62,12 +64,13 @@ convertPngButton.addEventListener('click', () => {
   convertedImg.src = dataURL;
   convertedType = 'png';
 
+  showImage();
   showMessage();
 });
 
 downloadButton.addEventListener('click', () => {
   if (!convertedImg) {
-    alert('Por favor, selecione um arquivo e converta-o.');
+    alert('Please select an image file and convert it.');
     return;
   }
 
@@ -83,8 +86,13 @@ toggleThemeButton.addEventListener('click', () => {
   body.classList.toggle('dark-mode');
 });
 
+function showImage() {
+  outputContainer.innerHTML = '';
+  outputContainer.appendChild(convertedImg);
+}
+
 function showMessage() {
   const messageContainer = document.getElementById('message-container');
-  const message = `Imagem convertida para ${convertedType.toUpperCase()}!`;
+  const message = `Image converted to ${convertedType.toUpperCase()}!`;
   messageContainer.textContent = message;
 }
