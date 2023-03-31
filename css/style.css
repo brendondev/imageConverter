@@ -97,7 +97,7 @@ hr {
 
 .output-legend {
   display: flex;
-  color: #321f24;
+  color: var(--background-color);
   width: 100%;
   position: absolute;
   justify-content: space-around;
