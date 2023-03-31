@@ -42,6 +42,14 @@ h1 {
   height: 40vh;
 }
 
+#message-container {
+  color: #321f24;
+}
+
+.message-container.show {
+  display: block;
+}
+
 .input {
   margin-bottom: 20px;
 }

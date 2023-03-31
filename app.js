@@ -5,6 +5,7 @@ const downloadButton = document.getElementById('download');
 const toggleThemeButton = document.getElementById('theme-toggle');
 const outputContainer = document.getElementById('output-container');
 const body = document.querySelector('body');
+const messageContainer = document.getElementById('message-container');
 
 let img = null;
 let convertedImg = null;
@@ -44,7 +45,7 @@ convertJpgButton.addEventListener('click', () => {
   convertedType = 'jpeg';
 
   showImage();
-  showMessage();
+  showMessage(`Image converted to ${convertedType.toUpperCase()}!`);
 });
 
 convertPngButton.addEventListener('click', () => {
@@ -65,7 +66,7 @@ convertPngButton.addEventListener('click', () => {
   convertedType = 'png';
 
   showImage();
-  showMessage();
+  showMessage(`Image converted to ${convertedType.toUpperCase()}!`);
 });
 
 downloadButton.addEventListener('click', () => {
@@ -76,10 +77,11 @@ downloadButton.addEventListener('click', () => {
 
   const a = document.createElement('a');
   document.body.appendChild(a);
-  a.download = 'bconverter.' + convertedType;
+  a.download = `image.${convertedType}`;
   a.href = convertedImg.src;
   a.click();
   document.body.removeChild(a);
+  showMessage(`Image downloaded as ${convertedType.toUpperCase()}!`);
 });
 
 toggleThemeButton.addEventListener('click', () => {
@@ -91,16 +93,6 @@ function showImage() {
   outputContainer.appendChild(convertedImg);
 }
 
-function showMessage() {
-  const messageContainer = document.getElementById('message-container');
-  const message = `Image converted to ${convertedType.toUpperCase()}!`;
+function showMessage(message) {
   messageContainer.textContent = message;
 }
-
-const navbarToggle = document.querySelector('.navbar-toggle');
-const navbarLinks = document.querySelector('.navbar-links');
-
-navbarToggle.addEventListener('click', () => {
-  navbarToggle.classList.toggle('active');
-  navbarLinks.classList.toggle('active');
-});
