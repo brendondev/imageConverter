@@ -100,6 +100,7 @@ function showMessage(message) {
   messageContainer.classList.add('show');
   setTimeout(() => {
     messageContainer.classList.remove('show');
+    messageContainer.textContent = '';
   }, 3000);
 }
 
