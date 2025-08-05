@@ -44,9 +44,10 @@ h1 {
 
 #message-container {
   color: #321f24;
+  display: none;
 }
 
-.message-container.show {
+#message-container.show {
   display: block;
 }
 
