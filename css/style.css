@@ -43,8 +43,8 @@ h1 {
 }
 
 #message-container {
+  display: none; /* hidden until show class added */
   color: #321f24;
-  display: none;
 }
 
 #message-container.show {
