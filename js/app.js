@@ -21,6 +21,7 @@ fileInput.addEventListener('change', () => {
       convertJpgButton.disabled = false;
       convertPngButton.disabled = false;
       displayImage();
+      showMessage('Image uploaded!');
     }
   }
 

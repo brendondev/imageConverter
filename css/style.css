@@ -44,7 +44,15 @@ h1 {
 
 #message-container {
   display: none; /* hidden until show class added */
-  color: #321f24;
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background-color: var(--primary-color);
+  color: var(--button-text-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
 }
 
 #message-container.show {
@@ -231,7 +239,10 @@ footer a {
   }
 
   #message-container {
-    margin-bottom: 3em;
+    top: 60px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
   }
 
   .output-legend {
