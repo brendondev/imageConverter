@@ -119,3 +119,7 @@ navbarToggle.addEventListener('click', () => {
   navbarToggle.classList.toggle('active');
   navbarLinks.classList.toggle('active');
 });
+
+if (typeof module !== 'undefined') {
+  module.exports = { showMessage };
+}

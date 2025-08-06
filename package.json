@@ -1,0 +1,19 @@
+{
+  "name": "imageconverter",
+  "version": "1.0.0",
+  "description": "<h1>🖼️ Image Converter</h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  }
+}
