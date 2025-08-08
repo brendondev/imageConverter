@@ -12,6 +12,9 @@ let convertedType = null;
 
 fileInput.addEventListener('change', () => {
   const file = fileInput.files[0];
+  if (!file) {
+    return;
+  }
   const reader = new FileReader();
 
   reader.onload = () => {
