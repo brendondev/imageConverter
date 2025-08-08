@@ -9,6 +9,7 @@ const body = document.querySelector('body');
 let img = null;
 let convertedImg = null;
 let convertedType = null;
+downloadButton.disabled = true;
 
 fileInput.addEventListener('change', () => {
   const file = fileInput.files[0];
@@ -23,6 +24,9 @@ fileInput.addEventListener('change', () => {
     img.onload = () => {
       convertJpgButton.disabled = false;
       convertPngButton.disabled = false;
+      convertedImg = null;
+      convertedType = null;
+      downloadButton.disabled = true;
       displayImage();
       showMessage('Image uploaded!');
     }
@@ -50,6 +54,7 @@ convertJpgButton.addEventListener('click', () => {
 
   showImage();
   showMessage('Image converted to JPEG!');
+  downloadButton.disabled = false;
 });
 
 convertPngButton.addEventListener('click', () => {
@@ -71,6 +76,7 @@ convertPngButton.addEventListener('click', () => {
 
   showImage();
   showMessage('Image converted to PNG!');
+  downloadButton.disabled = false;
 });
 
 downloadButton.addEventListener('click', () => {
